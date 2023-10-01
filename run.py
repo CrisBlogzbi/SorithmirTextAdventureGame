@@ -46,7 +46,7 @@ def cave_adventure():
     if choice == '1':
         deeper_cave()
     elif choice == '2':
-        crossroad()
+        crossroads()
     else:
         delay_print("Invalid choice. Please enter 1 or 2")
         

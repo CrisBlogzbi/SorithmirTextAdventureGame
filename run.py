@@ -13,6 +13,8 @@ def start_adventure()
     delay_print("On the right you can see a lake.")
     delay_print("And in the distance, away from the two roads, you can see a giant tree.")
     while True:
+        crossroads()
+        
 def crossroads()
     delay_print("What do you want to do?")
     delay_print("1. Go left into the dark cave. Creepy, but you might find something good!")

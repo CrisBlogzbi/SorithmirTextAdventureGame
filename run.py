@@ -14,7 +14,8 @@ def start_adventure()
     delay_print("And in the distance, away from the two roads, you can see a giant tree.")
     while True:
         crossroads()
-        
+
+#main adventure
 def crossroads()
     delay_print("What do you want to do?")
     delay_print("1. Go left into the dark cave. Creepy, but you might find something good!")
@@ -36,6 +37,7 @@ def crossroads()
     else:
         delay_print("Invalid choice. Please enter 1, 2, 3 or 4.")
 
+#main adventure .1
 def cave_adventure():
     delay_print("You enter the dark cave.")
     delay_print("It's eerie and you feel unconfortable. It's very dark inside, but you brought a torch with you.")
@@ -54,9 +56,34 @@ def cave_adventure():
         
 
     
-    
+#cave adventure 
 def deeper_cave():
-    
+    delay_print("As you enter deeper into the cave, you notice a crack in the wall on your left from where a ray of light is shining out.")
+    delay_print("What do you do?")
+    delay_print("1. Continue exploring the cave")
+    delay_print("2. Check the light.")
+
+    choice = input("Enter your choice (1/2): ")
+
+    if choice == '1':
+        even_deeper_cave()
+    elif choice == '2':
+        light_cave()
+    else:
+        delay_print("Invalid choice. Please enter 1 or 2.")
+
+
+#cave adventure .1
+def even_deeper_cave()
+
+#cave adventure .2   
+def light_cave()
+
+#main adventure .2
+def lake_adventure()
+
+#main adventure .3
+def giant_tree()
 
 start_adventure()
         

@@ -1,5 +1,7 @@
 # Sorithmir Text Adventure Game
 
+![Main Game](images/main-game.png)
+
 Welcome to the Sorithmir Text Adventure Game! This is a simple text-based adventure game written in Python. In this game, you will embark on an adventure in a dense forest and make choices that affect your score and the outcome of the game.
 
 ## How to Play

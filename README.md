@@ -72,6 +72,8 @@ This project was deployed using Code Institute's mock terminal for Heroku.
     - Link the Heroku app to the repository.
     - Click on *Deploy*.
 
+The live link is: https://sorithmir-text-adventure-game-9c48d5867fd4.herokuapp.com
+
 ## Credits
 
 - Code Institute for the deployment terminal.

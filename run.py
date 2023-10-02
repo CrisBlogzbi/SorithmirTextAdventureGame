@@ -87,7 +87,7 @@ def light_cave():
     delay_print("1. Take the coin with you.")
     delay_print("2. Leave the coin there.")
 
-    choice = input("Enter your choice(1/2): ")
+    choice = input("Enter your choice (1/2): ")
 
     if choice == '1':
         delay_print("Congratulations you found the Hidden treasure!")
@@ -98,9 +98,51 @@ def light_cave():
 
 #main adventure .2
 def lake_adventure():
+    delay_print("As you aproach the lake you notice a swimming swan. So peaceful.")
+    delay_print("What do you want to do?")
+    delay_print("1. Sit on the grass and relax for a while.")
+    delay_print("2. Go for a swin with the swan.")
 
+    choice = input("Enter your choice (1/2): ")
+
+    if choice == '1':
+        delay_print("You feel calm. It's always nice to meditate for a while.")
+        delay_print("After some time, you decide to return to the crossroads.")
+        crossroads()
+    elif choice == '2':
+        delay_print("You go for a swim. After some time, the swan aproaches you, carrying a sparkling Golden Coin in its beak.")
+        delay_print("You take the Coin, amazed by it's glow and beauty and return to the crossroads.")
+        crossroads()
+    else:
+        delay_print("Invalid choice. Please enter 1 or 2.")
 #main adventure .3
 def giant_tree():
+    delay_print("You aproach the mighty tree and notice... it's alive! It has a face on it's trunk and you can see it's roots pulsating through the ground.")
+    delay_print("As you get close to it, it lets out a grunt.")
+    delay_print("Tree: Beneath me lies a portal to a magical land. Go through it at your own risk.")
+    delay_print("You stare in awe, not knowing what to say.")
+    delay_print("What do you do?")
+    delay_print("1. Go through the portal.")
+    delay_print("2. Return to the crossroads.")
+    delay_print("3. You've seen enough of the forest. You decide it's time to go home.")
 
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == '1':
+        delay_print("As you go through the portal, you see a lenghty land of magical creatures.")
+        delay_print("You turn around and the portal seems to be gone.")
+        delay_print("Not knowing what to do, you go on to explore the land.")
+        delay_print("To be continued...")
+        delay_print("Thanks for playing! Goodbye.")
+        break
+    elif choice == '2':
+        delay_print("You don't trust the tree... or better said, you're afraid of it! You decide to turn back.")
+        crossroads()
+    elif choice == '3':
+        delay_print("After a day like that, the first thing you do after getting home, is taking a nap!")
+        delay_print("Thanks for playing! Goodbye.")
+        break
+    else:
+        delay_print("Invalid choice. Please enter 1,2 or 3.")
 start_adventure():
         

@@ -1,32 +1,78 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sorithmir Text Adventure Game
 
-Welcome,
+Welcome to the Sorithmir Text Adventure Game! This is a simple text-based adventure game written in Python. In this game, you will embark on an adventure in a dense forest and make choices that affect your score and the outcome of the game.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## How to Play
 
-## Reminders
+1. You will find yourself at a crossroads in a dense forest with three options:
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+- Go left into the dark cave.
+- Go right towards the shining lake.
+- Go straight ahead to explore the giant tree.
 
-## Creating the Heroku app
+2. Explore these locations, make choices, and collect scores.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+- In the cave, you might find hidden treasures.
+- At the lake, you can relax or go for a swim.
+- The giant tree holds a portal to a magical land.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+3. Your goal is to maximize your score and uncover the secrets of the forest.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+4. If you decide to quit the adventure, you can do so at certain times.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+5. After each playthrough, you can choose to play again.
 
-Connect your GitHub repository and deploy as normal.
+6. Advance through the forest by typing one of the choices.
 
-## Constraints
+## Scoring
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- Your final score is determined by the choices you make during the game.
+- Some choices lead to more points than others, so choose wisely.
+- Try to achieve the highest score possible and explore different paths.
 
----
+## Features
 
-Happy coding!
+- Every stage has multiple choices, the player can choose where to go.
+- At most stages of the game, a restart is possible.
+- Your score is tracked after each location.
+
+## Testing
+
+- I have tested almost every combination of choices, including going to the same location over and over again.
+- Passed the code through [ExtendsClass](https://extendsclass.com/python-tester.html)
+
+### Bugs
+
+#### Solved
+
+- There was one point in the coding, where the console would return an error, after the user went to the cave, then decided to abandon the quest and then tried to restart. It was because I forgot to include the restart variable in the return values.
+- There was a point in the coding process, where at the last stage, the score wouldn't correctly add up. That was because I didn't use the score += added_score property properly. *That's a nice tongue twister, try saying "property properly" 5 times in a row.*
+
+#### Remaining
+
+- No bugs remaining
+
+### Validator
+
+- ExtendsClass
+    - No errors were returned from ExtendsClass.com
+
+
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+- Steps for deployment:
+    - Clone repository
+    - Create a new Heroku app
+    - Set the buildbacks to Python and NodeJs in that order *You can drag and drop them to swap, if you put them in the wrong order*
+    - Link the Heroku app to the repository
+    - Click on *Deploy*
+
+## Credits
+
+- Code Institute for the deployment terminal
+- Code Institute for the Sample README.md that I got inspired from, to write my README.md file.
+
+##### Have fun and enjoy your adventure in the world of Sorithmir!
+

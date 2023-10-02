@@ -38,7 +38,7 @@ def crossroads(score, cave_visited, lake_visited):
     delay_print("3. Go straight ahead. You need to know what's with that tree!")
     delay_print("4. Give up the adventure and go home.")
         
-    choice = input("Enter your choice (1/2/3/4): ")
+    choice = input("Enter your choice (1/2/3/4):\n ")
         
     if choice == '1' and not cave_visited:
         score, added_score = cave_adventure(score)
@@ -53,7 +53,7 @@ def crossroads(score, cave_visited, lake_visited):
         score += added_score
     elif choice == '4':
         delay_print("Thanks for playing! Your final score is: {}".format(score))
-        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        restart = input("Do you want to play again? (yes):\n ").lower() == 'yes'
         return score, cave_visited, lake_visited, restart
     else:
         delay_print("Invalid choice. Please enter 1, 2, 3 or 4.")
@@ -68,7 +68,7 @@ def cave_adventure(score):
     delay_print("1. Continue deeper into the cave.")
     delay_print("2. Leave the cave.")
     
-    choice = input("Enter your choice (1/2): ")
+    choice = input("Enter your choice (1/2):\n ")
     
     if choice == '1':
         added_score = deeper_cave()
@@ -88,7 +88,7 @@ def deeper_cave():
     delay_print("1. Continue exploring the cave")
     delay_print("2. Check the light.")
 
-    choice = input("Enter your choice (1/2): ")
+    choice = input("Enter your choice (1/2):\n ")
 
     if choice == '1':
         added_score = dead_end_cave()
@@ -115,7 +115,7 @@ def light_cave():
     delay_print("1. Take the coin with you.")
     delay_print("2. Leave the coin there. And return to the crossroads")
 
-    choice = input("Enter your choice (1/2): ")
+    choice = input("Enter your choice (1/2):\n ")
 
     if choice == '1':
         delay_print("Congratulations you found the Hidden treasure!")
@@ -134,7 +134,7 @@ def lake_adventure(score):
     delay_print("1. Sit on the grass and relax for a while.")
     delay_print("2. Go for a swin with the swan.")
 
-    choice = input("Enter your choice (1/2): ")
+    choice = input("Enter your choice (1/2):\n ")
 
     if choice == '1':
         delay_print("You feel calm. It's always nice to meditate for a while.")
@@ -160,7 +160,7 @@ def giant_tree(score):
     delay_print("2. Return to the crossroads.")
     delay_print("3. You've seen enough of the forest. You decide it's time to go home.")
 
-    choice = input("Enter your choice (1/2/3): ")
+    choice = input("Enter your choice (1/2/3):\n ")
 
     if choice == '1':
         delay_print("As you go through the portal, you see a lenghty land of magical creatures.")
@@ -170,7 +170,7 @@ def giant_tree(score):
         added_score = 20 #+20 score
         score += added_score
         delay_print("Thanks for playing! Your final score is: {}".format(score))
-        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        restart = input("Do you want to play again? (yes):\n ").lower() == 'yes'
         return score, added_score, restart
     elif choice == '2':
         delay_print("You don't trust the tree... or better said, you're afraid of it! You decide to turn back.")
@@ -179,7 +179,7 @@ def giant_tree(score):
         added_score = 5 #+5 score
         score += added_score
         delay_print("Thanks for playing! Your final score is: {}".format(score))
-        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        restart = input("Do you want to play again? (yes):\n ").lower() == 'yes'
         return score, added_score, restart
     else:
         delay_print("Invalid choice. Please enter 1,2 or 3.")

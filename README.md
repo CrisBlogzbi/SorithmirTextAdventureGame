@@ -46,32 +46,33 @@ Welcome to the Sorithmir Text Adventure Game! This is a simple text-based advent
 #### Solved
 
 - There was one point in the coding, where the console would return an error, after the user went to the cave, then decided to abandon the quest and then tried to restart. It was because I forgot to include the restart variable in the return values.
-- There was a point in the coding process, where at the last stage, the score wouldn't correctly add up. That was because I didn't use the score += added_score property properly. *That's a nice tongue twister, try saying "property properly" 5 times in a row.*
+- There was a point in the coding process, where at the last stage, the score wouldn't correctly add up. That was because I didn't use the "score += added_score" property properly. 
+*That's a nice tongue twister, try saying "property properly" 5 times in a row.*
 
 #### Remaining
 
-- No bugs remaining
+- No bugs remaining.
 
 ### Validator
 
 - ExtendsClass
-    - No errors were returned from ExtendsClass.com
-
+    - No errors were returned from ExtendsClass.com.
+![ExtendsClass Validator](images/extends-class-validator.png)
 
 ## Deployment
 
 This project was deployed using Code Institute's mock terminal for Heroku.
 
 - Steps for deployment:
-    - Clone repository
-    - Create a new Heroku app
-    - Set the buildbacks to Python and NodeJs in that order *You can drag and drop them to swap, if you put them in the wrong order*
-    - Link the Heroku app to the repository
-    - Click on *Deploy*
+    - Clone repository.
+    - Create a new Heroku app.
+    - Set the buildbacks to Python and NodeJs in that order. *You can drag and drop them to swap, if you put them in the wrong order*
+    - Link the Heroku app to the repository.
+    - Click on *Deploy*.
 
 ## Credits
 
-- Code Institute for the deployment terminal
+- Code Institute for the deployment terminal.
 - Code Institute for the Sample README.md that I got inspired from, to write my README.md file.
 
 ##### Have fun and enjoy your adventure in the world of Sorithmir!

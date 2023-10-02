@@ -10,7 +10,8 @@ def start_adventure():
     while True:
         score = 0 # Initialize score
         delay_print("Welcome to the Sorithmir Text Adventure Game!")
-        delay_print("You find yourself standing at a crossroads in a dense forest. You can see a the entrance to a cave on your left. On the right you can see a lake. And in the distance, away from the two roads, you can see a giant tree.")
+        delay_print("You find yourself standing at a crossroads in a dense forest. You can see a the entrance to a cave on your left. On the right you can see a lake.")
+        delay_print("And in the distance, away from the two roads, you can see a giant tree.")
         delay_print("You can see a the entrance to a cave on your left.")
         delay_print("On the right you can see a lake.")
         delay_print("And in the distance, away from the two roads, you can see a giant tree.")

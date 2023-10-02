@@ -66,7 +66,7 @@ def deeper_cave():
     choice = input("Enter your choice (1/2): ")
 
     if choice == '1':
-        even_deeper_cave()
+        dead_end_cave()
     elif choice == '2':
         light_cave()
     else:
@@ -74,17 +74,33 @@ def deeper_cave():
 
 
 #cave adventure .1
-def even_deeper_cave()
+def dead_end_cave():
+    delay_print("You find a dead end. There's nothing in here. So you walk back.")
+    delay_print("As you aproach the crack in the wall, you notice the light is gone.")
+    crossroads()
 
 #cave adventure .2   
-def light_cave()
+def light_cave():
+    delay_print("You push yourself against the crack and the stone crumbles, revealing something that looks like a treasure room.")
+    delay_print("Inside, amongst other dusty old treasure, you see a Golden Coin, sparking bright as the sun, looking as if the passing of time never got to it.")
+    delay_print("What do you do?")
+    delay_print("1. Take the coin with you.")
+    delay_print("2. Leave the coin there.")
+
+    choice = input("Enter your choice(1/2): ")
+
+    if choice == '1':
+        delay_print("Congratulations you found the Hidden treasure!")
+    elif choice == '2':
+        crossroads()
+    else:
+        delay_print("Invalid choice. Please enter 1 or 2.")
 
 #main adventure .2
-def lake_adventure()
+def lake_adventure():
 
 #main adventure .3
-def giant_tree()
+def giant_tree():
 
-start_adventure()
+start_adventure():
         
-def score()

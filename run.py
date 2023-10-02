@@ -7,34 +7,36 @@ def delay_print(text, delay=0.005):
     print()
 
 def start_adventure():
-
-    score = 0 # Initialize score
-    delay_print("Welcome to the Sorithmir Text Adventure Game!")
-    delay_print("You find yourself standing at a crossroads in a dense forest. You can see a the entrance to a cave on your left. On the right you can see a lake. And in the distance, away from the two roads, you can see a giant tree.")
-    delay_print("You can see a the entrance to a cave on your left.")
-    delay_print("On the right you can see a lake.")
-    delay_print("And in the distance, away from the two roads, you can see a giant tree.")
-
-    cave_visited = False # Flag to track if the cave has been visited
-
     while True:
-        delay_print("Your current score: {}".format(score))
-        score, cave_visited = crossroads(score, cave_visited)
+        score = 0 # Initialize score
+        delay_print("Welcome to the Sorithmir Text Adventure Game!")
+        delay_print("You find yourself standing at a crossroads in a dense forest. You can see a the entrance to a cave on your left. On the right you can see a lake. And in the distance, away from the two roads, you can see a giant tree.")
+        delay_print("You can see a the entrance to a cave on your left.")
+        delay_print("On the right you can see a lake.")
+        delay_print("And in the distance, away from the two roads, you can see a giant tree.")
 
+        cave_visited = False # Flag to track if the cave has been visited
+        lake_visited = False  # Flag to track if the lake has been visited
+
+        while True:
+            delay_print("Your current score: {}".format(score))
+            score, cave_visited, lake_visited, restart = crossroads(score, cave_visited, lake_visited)
+            if restart:
+                break
 
 #main adventure
-def crossroads(score, cave_visited):
+def crossroads(score, cave_visited, lake_visited):
+    restart = False
     delay_print("What do you want to do?")
 
     # Determine the available choices based on cave_visited flag
-    if cave_visited:
-        delay_print("2. Go right towards the shining lake. Always good to meditate.")
-    else:
+    if not cave_visited:
         delay_print("1. Go left into the dark cave. Creepy, but you might find something good!")
+    if not lake_visited:
         delay_print("2. Go right towards the shining lake. Always good to meditate.")
     
     delay_print("3. Go straight ahead. You need to know what's with that tree!")
-    delay_print("4. Quit the game.")
+    delay_print("4. Give up the adventure and go home.")
         
     choice = input("Enter your choice (1/2/3/4): ")
         
@@ -42,18 +44,20 @@ def crossroads(score, cave_visited):
         score, added_score = cave_adventure(score)
         score += added_score
         cave_visited = True
-    elif choice == '2':
+    elif choice == '2' and not lake_visited:
         score, added_score = lake_adventure(score)
         score += added_score
+        lake_visited = True
     elif choice == '3':
-        score, added_score = giant_tree(score)
+        score, added_score, restart = giant_tree(score)
         score += added_score
     elif choice == '4':
         delay_print("Thanks for playing! Your final score is: {}".format(score))
-        return score, cave_visited
+        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        return score, cave_visited, lake_visited, restart
     else:
         delay_print("Invalid choice. Please enter 1, 2, 3 or 4.")
-    return score, cave_visited
+    return score, cave_visited, lake_visited, restart
 
 #main adventure .1
 def cave_adventure(score):
@@ -144,6 +148,7 @@ def lake_adventure(score):
     return score, added_score
 #main adventure .3
 def giant_tree(score):
+    restart = False
     added_score = 0 
     delay_print("You aproach the mighty tree and notice... it's alive! It has a face on it's trunk and you can see it's roots pulsating through the ground.")
     delay_print("As you get close to it, it lets out a grunt.")
@@ -161,17 +166,21 @@ def giant_tree(score):
         delay_print("You turn around and the portal seems to be gone.")
         delay_print("Not knowing what to do, you go on to explore the land.")
         delay_print("To be continued...")
-        delay_print("Thanks for playing! Goodbye.")
         added_score = 20 #+20 score
+        delay_print("Thanks for playing! Your final score is: {}".format(score))
+        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        return score, added_score, restart
     elif choice == '2':
         delay_print("You don't trust the tree... or better said, you're afraid of it! You decide to turn back.")
     elif choice == '3':
         delay_print("After a day like that, the first thing you do after getting home, is taking a nap!")
-        delay_print("Thanks for playing! Goodbye.")
         added_score = 5 #+5 score
+        delay_print("Thanks for playing! Your final score is: {}".format(score))
+        restart = input("Do you want to play again? (yes): ").lower() == 'yes'
+        return score, added_score, restart
     else:
         delay_print("Invalid choice. Please enter 1,2 or 3.")
-    return score, added_score
+    return score, added_score, restart
         
 start_adventure()
         

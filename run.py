@@ -12,8 +12,13 @@ def start_adventure()
     delay_print("You can see a the entrance to a cave on your left.")
     delay_print("On the right you can see a lake.")
     delay_print("And in the distance, away from the two roads, you can see a giant tree.")
+
+    score = 0
+
     while True:
+        delay_print("Your current score: {}".format(score))
         crossroads()
+
 
 #main adventure
 def crossroads()

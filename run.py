@@ -1,6 +1,6 @@
 import time
 
-def delay_print(text, delay=0.005):
+def delay_print(text, delay=0.03):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -128,6 +128,7 @@ def light_cave():
 
 #main adventure .2
 def lake_adventure(score):
+    added_score = 0 
     delay_print("As you aproach the lake you notice a swimming swan. So peaceful.")
     delay_print("What do you want to do?")
     delay_print("1. Sit on the grass and relax for a while.")
@@ -167,6 +168,7 @@ def giant_tree(score):
         delay_print("Not knowing what to do, you go on to explore the land.")
         delay_print("To be continued...")
         added_score = 20 #+20 score
+        score += added_score
         delay_print("Thanks for playing! Your final score is: {}".format(score))
         restart = input("Do you want to play again? (yes): ").lower() == 'yes'
         return score, added_score, restart
@@ -175,6 +177,7 @@ def giant_tree(score):
     elif choice == '3':
         delay_print("After a day like that, the first thing you do after getting home, is taking a nap!")
         added_score = 5 #+5 score
+        score += added_score
         delay_print("Thanks for playing! Your final score is: {}".format(score))
         restart = input("Do you want to play again? (yes): ").lower() == 'yes'
         return score, added_score, restart
@@ -183,4 +186,3 @@ def giant_tree(score):
     return score, added_score, restart
         
 start_adventure()
-        

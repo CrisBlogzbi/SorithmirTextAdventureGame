@@ -7,19 +7,17 @@ def delay_print(text, delay=0.005):
     print()
 
 def start_adventure():
+
+    score = 0 # Initialize score
     delay_print("Welcome to the Sorithmir Text Adventure Game!")
     delay_print("You find yourself standing at a crossroads in a dense forest. You can see a the entrance to a cave on your left. On the right you can see a lake. And in the distance, away from the two roads, you can see a giant tree.")
     delay_print("You can see a the entrance to a cave on your left.")
     delay_print("On the right you can see a lake.")
     delay_print("And in the distance, away from the two roads, you can see a giant tree.")
 
-    # Initialize score
-    global score
-    score = 0
-
     while True:
         delay_print("Your current score: {}".format(score))
-        crossroads(score)
+        score = crossroads(score)
 
 
 #main adventure
@@ -33,11 +31,11 @@ def crossroads(score):
     choice = input("Enter your choice (1/2/3/4): ")
         
     if choice == '1':
-        score += cave_adventure()
+        score = cave_adventure(score)
     elif choice == '2':
-        score += lake_adventure()
+        score = lake_adventure(score)
     elif choice == '3':
-        score += giant_tree()
+        score = giant_tree(score)
     elif choice == '4':
         delay_print("Thanks for playing! Your final score is: {}".format(score))
         return score
@@ -46,7 +44,7 @@ def crossroads(score):
     return score
 
 #main adventure .1
-def cave_adventure():
+def cave_adventure(score):
     delay_print("You enter the dark cave.")
     delay_print("It's eerie and you feel unconfortable. It's very dark inside, but you brought a torch with you.")
     delay_print("What do you want to do?")
@@ -56,16 +54,16 @@ def cave_adventure():
     choice = input("Enter your choice (1/2): ")
     
     if choice == '1':
-        return deeper_cave()
+        return deeper_cave(score)
     elif choice == '2':
-        return crossroads(score)
+        return score
     else:
         delay_print("Invalid choice. Please enter 1 or 2")
         
 
     
 #cave adventure 
-def deeper_cave():
+def deeper_cave(score):
     delay_print("As you enter deeper into the cave, you notice a crack in the wall on your left from where a ray of light is shining out.")
     delay_print("What do you do?")
     delay_print("1. Continue exploring the cave")
@@ -74,21 +72,21 @@ def deeper_cave():
     choice = input("Enter your choice (1/2): ")
 
     if choice == '1':
-        return dead_end_cave()
+        return dead_end_cave(score)
     elif choice == '2':
-        return light_cave()
+        return light_cave(score)
     else:
         delay_print("Invalid choice. Please enter 1 or 2.")
 
 
 #cave adventure .1
-def dead_end_cave():
+def dead_end_cave(score):
     delay_print("You find a dead end. There's nothing in here. So you walk back.")
     delay_print("As you aproach the crack in the wall, you notice the light is gone.")
-    return crossroads(score)
+    return score
 
 #cave adventure .2   
-def light_cave():
+def light_cave(score):
     delay_print("You push yourself against the crack and the stone crumbles, revealing something that looks like a treasure room.")
     delay_print("Inside, amongst other dusty old treasure, you see a Golden Coin, sparking bright as the sun, looking as if the passing of time never got to it.")
     delay_print("What do you do?")
@@ -99,15 +97,15 @@ def light_cave():
 
     if choice == '1':
         delay_print("Congratulations you found the Hidden treasure!")
-        return 10
-        #+10 score
+        return score + 10 #+10 score
     elif choice == '2':
-        return crossroads(score)
+        return score
     else:
         delay_print("Invalid choice. Please enter 1 or 2.")
+        return score
 
 #main adventure .2
-def lake_adventure():
+def lake_adventure(score):
     delay_print("As you aproach the lake you notice a swimming swan. So peaceful.")
     delay_print("What do you want to do?")
     delay_print("1. Sit on the grass and relax for a while.")
@@ -118,19 +116,16 @@ def lake_adventure():
     if choice == '1':
         delay_print("You feel calm. It's always nice to meditate for a while.")
         delay_print("After some time, you decide to return to the crossroads.")
-        crossroads(score)
-        return 5
-        #+5 score
+        return score + 5 #+5 score
     elif choice == '2':
         delay_print("You go for a swim. After some time, the swan aproaches you, carrying a sparkling Golden Coin in its beak.")
         delay_print("You take the Coin, amazed by it's glow and beauty and return to the crossroads.")
-        crossroads(score)
-        return 10
-        #+10 score
+        return score + 10 #+10 score
     else:
         delay_print("Invalid choice. Please enter 1 or 2.")
+        return score
 #main adventure .3
-def giant_tree():
+def giant_tree(score):
     delay_print("You aproach the mighty tree and notice... it's alive! It has a face on it's trunk and you can see it's roots pulsating through the ground.")
     delay_print("As you get close to it, it lets out a grunt.")
     delay_print("Tree: Beneath me lies a portal to a magical land. Go through it at your own risk.")
@@ -148,18 +143,17 @@ def giant_tree():
         delay_print("Not knowing what to do, you go on to explore the land.")
         delay_print("To be continued...")
         delay_print("Thanks for playing! Goodbye.")
-        return 20
-        #+20 score
+        return score + 20 #+20 score
     elif choice == '2':
         delay_print("You don't trust the tree... or better said, you're afraid of it! You decide to turn back.")
-        crossroads(score)
+        return score
     elif choice == '3':
         delay_print("After a day like that, the first thing you do after getting home, is taking a nap!")
         delay_print("Thanks for playing! Goodbye.")
-        #+5 score
-        return 5
+        return score + 5 #+5 score
     else:
         delay_print("Invalid choice. Please enter 1,2 or 3.")
+        return score
         
 start_adventure()
         
